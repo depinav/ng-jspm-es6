@@ -1,0 +1,23 @@
+{
+  "name": "dashboard-project",
+  "version": "0.0.0",
+  "homepage": "https://github.com/depinav/ng-jspm-es6",
+  "authors": [
+    "Victor DePina"
+  ],
+  "moduleType": [
+    "es6"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-less": "~3.3.4"
+  }
+}

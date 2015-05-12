@@ -2,3 +2,4 @@
 node_modules/*
 dist/*
 jspm_packages/*
+app/components/*
