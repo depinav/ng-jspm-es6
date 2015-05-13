@@ -26,8 +26,11 @@
     "gulp-less": "^3.0.3",
     "jasmine-core": "^2.3.3",
     "karma": "^0.12.31",
+<<<<<<< HEAD
     "karma-babel-preprocessor": "^5.1.0",
     "karma-browserify": "^4.1.2",
+=======
+>>>>>>> 2858d7f18b3e1ad88d412166032ee0c7c9cb92ed
     "karma-chrome-launcher": "^0.1.10",
     "karma-firefox-launcher": "^0.1.6",
     "karma-jasmine": "^0.3.5"

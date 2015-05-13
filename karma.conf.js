@@ -15,9 +15,9 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-        './jspm_packages/github/angular/bower-angular@1.3.15/angular.js',
-        './app/**/**/*.spec.js',
-        './app/app.js'
+      './jspm_packages/github/angular/bower-angular@1.3.15/angular.js',
+      './app/**/**/*.spec.js',
+      './app/app.js'
     ],
 
 
