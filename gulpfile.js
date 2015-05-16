@@ -1,10 +1,11 @@
-var gulp 		= require('gulp'),
-  	connect 	= require('gulp-connect'),
-  	less 			= require('gulp-less'),
-  	path			= require('path'),
-    del       = require('del'),
-    karma     = require('karma').server,
-    jspm      = require('jspm');
+var gulp 		    = require('gulp'),
+  	connect 	  = require('gulp-connect'),
+  	less 			  = require('gulp-less'),
+  	path			  = require('path'),
+    del         = require('del'),
+    htmlreplace = require('gulp-html-replace'),
+    karma       = require('karma').server,
+    jspm        = require('jspm');
 
 // Watch our changes
 gulp.task('watch', function(){
@@ -62,7 +63,13 @@ gulp.task('jspm:bundle', function() {
 });
 
 gulp.task('html:build', function() {
-  gulp.src('./app/**/**/*.html')
+  gulp.src('./app/index.html').
+    pipe(htmlreplace({
+      'js': 'build.js'
+    }))
+    .pipe(gulp.dest('dist'));
+
+  gulp.src(['./app/**/**/*.html', '!./app/index.html'])
   .pipe(gulp.dest('dist'));
 });
 
