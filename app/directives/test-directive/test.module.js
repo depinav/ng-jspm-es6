@@ -7,6 +7,7 @@ test.directive('test', function() {
 		scope: {
 		},
 		link: function(scope) {
+			scope.title = `This is a test directive`;
 		}
 	};
 });

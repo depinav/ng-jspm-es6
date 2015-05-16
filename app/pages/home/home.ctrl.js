@@ -1,8 +1,6 @@
 export default angular.module('nts.pages.home', [])
-.controller('HomeController', function($scope, ChartDataService) {
+.controller('HomeController', function($scope, TestService) {
 	$scope.title = 'Welcome back';
 
-	$scope.message = ChartDataService.doSomething();
-
-	$scope.chartData = 2;
+	$scope.message = TestService.doSomething();
 });

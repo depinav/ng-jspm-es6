@@ -1,7 +1,8 @@
 var gulp 		= require('gulp'),
   	connect 	= require('gulp-connect'),
   	less 			= require('gulp-less'),
-  	path			= require('path');
+  	path			= require('path'),
+    karma     = require('karma').server;
 
 // Watch our changes
 gulp.task('watch', function(){
@@ -31,12 +32,20 @@ gulp.task('less', function() {
 	.pipe(gulp.dest('./app/assets/css'));
 });
 
+gulp.task('test', function (done) {
+  karma.start({
+    configFile: __dirname + '/karma.conf.js',
+    browsers: ['PhantomJS']
+  }, done);
+});
+
 gulp.task('connect', function() {
   connect.server({
+    root: ['./', 'app'],
     livereload: true,
     port: 1035
   });
 });
 
 // Start the tasks
-gulp.task('default', ['connect', 'watch', 'vendor-less', 'less']);
+gulp.task('default', ['connect', 'watch', 'vendor-less', 'less', 'test']);

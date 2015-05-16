@@ -1,6 +1,5 @@
-import {test} from './test-directive/test.module';
-import {chartBox} from './chart-box/chart-box.module';
+import {test} from './test-directive/test.module';;
 
-var directives = angular.module('nts.directives', [test.name, chartBox.name]);
+var directives = angular.module('nts.directives', [test.name]);
 
 export {directives};

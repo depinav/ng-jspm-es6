@@ -1,5 +1,5 @@
 // Karma configuration
-// Generated on Tue May 12 2015 15:17:31 GMT-0500 (CDT)
+// Generated on Sat May 16 2015 14:00:15 GMT-0500 (CDT)
 
 module.exports = function(config) {
   config.set({
@@ -10,14 +10,16 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['jasmine'],
+    frameworks: ['jspm', 'jasmine'],
+
+    jspm: {
+      loadFiles: ['app/**/**/*.spec.js']
+      // serveFiles: ['src/**/*.js']
+    },
 
 
     // list of files / patterns to load in the browser
     files: [
-      './jspm_packages/github/angular/bower-angular@1.3.15/angular.js',
-      './app/**/**/*.spec.js',
-      './app/app.js'
     ],
 
 
@@ -29,19 +31,6 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      './app/**/**/*.js': ['babel']
-    },
-
-    babelPreprocessor: {
-      options: {
-        sourceMap: 'inline'
-      },
-      filename: function(file) {
-        return file.originalPath.replace(/\.js$/, '.es5.js');
-      },
-      sourceFileName: function(file) {
-        return file.originalPath;
-      }
     },
 
 
@@ -70,7 +59,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome'],
+    browsers: ['Chrome', 'PhantomJS'],
 
 
     // Continuous Integration mode
