@@ -9,8 +9,8 @@ import {services} from './services/services.module';
 
 angular.module('MainApp', ['ui.router', pages.name, directives.name, services.name])
 .config(function($stateProvider, $urlRouterProvider) {
-    
-	let pagesPath = './app/pages/';
+
+	let pagesPath = './pages/';
 	$urlRouterProvider.otherwise('/');
 
 	$stateProvider
@@ -18,7 +18,7 @@ angular.module('MainApp', ['ui.router', pages.name, directives.name, services.na
             url: '/',
             templateUrl: `${pagesPath}home/home.html`,
             controller: 'HomeController'
-        });		
+        });
 })
 .controller('MainController', function($scope) {
 });
